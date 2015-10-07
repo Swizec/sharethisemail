@@ -4,7 +4,7 @@ const React = require('react'),
 
 var rootInstance = React.render(
     <ShareThisEmail />,
-    document.querySelectorAll('.container')[0]
+    document.querySelectorAll('.the-form')[0]
 );
 
 if (module.hot) {

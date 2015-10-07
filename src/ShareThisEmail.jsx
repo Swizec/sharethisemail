@@ -22,12 +22,7 @@ const ShareThisEmail = React.createClass({
     render: function () {
         return (
             <div>
-                <h1>Create a Share This Email link</h1>
-                <p className="lead">
-                    Meant to be used in email campaigns created with Mailchimp, GetDrip, AWeber and so on.
-                </p>
-
-                <form>
+                <form className="col-md-8">
                     <Subject value={this.state.subject} />
                     <Body value={this.state.body} />
                     <Link subject={this.state.subject}

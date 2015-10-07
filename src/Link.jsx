@@ -1,11 +1,16 @@
 
-const React = require('react');
+const React = require('react'),
+      toMarkdown = require('to-markdown');
 
 const Link = React.createClass({
 
     build_link: function () {
         var subject = encodeURIComponent(this.props.subject),
-            body = encodeURIComponent(this.props.body);
+            body = encodeURIComponent(
+                toMarkdown(
+                    this.props.body.replace(/(?:\r\n|\r|\n)/g, '<br />')
+                )
+            );
 
         return "mailto:?subject="+subject+"&body="+body;
     },
@@ -13,7 +18,7 @@ const Link = React.createClass({
     render: function () {
         return (
             <p>
-                Copy this link into your email: <a href={this.build_link()} target="_blank">share this email with a friend</a>
+                You're done! Copy this into your email: <a href={this.build_link()} target="_blank">Email this to a friend</a>
             </p>
         );
     }

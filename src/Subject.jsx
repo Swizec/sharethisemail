@@ -9,10 +9,16 @@ const Subject = React.createClass({
 
     render: function () {
         return (
-            <input type="text"
-                   placeholder="Paste your subject line"
-                   value={this.props.value}
-                   onChange={this.update} />
+            <div className="form-group">
+                <label htmlFor="subject">Subject:</label>
+                <input type="text"
+                       className="form-control"
+                       id="subject"
+                       placeholder="Paste your subject line"
+                       value={this.props.value}
+                       onChange={this.update} />
+                <p className="help-block">This will become the prefilled subject line.</p>
+            </div>
         );
     }
 });
