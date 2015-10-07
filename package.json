@@ -1,0 +1,32 @@
+{
+  "name": "sharethisemail",
+  "version": "0.0.0",
+  "description": "A service to generate Share This Email mailto links",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Swizec/react-zoomable.git"
+  },
+  "keywords": [
+    "react",
+    "d3",
+    "zoomable"
+  ],
+  "author": "Swizec Teller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Swizec/sharethisemail/issues"
+  },
+  "homepage": "https://github.com/Swizec/sharethisemail",
+  "devDependencies": {
+    "babel-loader": "^5.3.2",
+    "react": "^0.13.3",
+    "react-hot-loader": "^1.2.9",
+    "webpack": "^1.12.0",
+    "webpack-dev-server": "^1.10.1"
+  }
+}
