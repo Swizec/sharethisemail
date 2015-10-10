@@ -12,13 +12,13 @@ module.exports = {
         publicPath: '/build/'
     },
     plugins: [
-        new webpack.NoErrorsPlugin()
+        new webpack.optimize.UglifyJsPlugin({minimize: true})
     ],
     module: {
         loaders: [
             {
                 test: /\.jsx$/,
-                loaders: ['react-hot', 'babel'],
+                loaders: ['babel'],
                 include: path.join(__dirname, 'src')
             }
         ]
@@ -28,7 +28,5 @@ module.exports = {
     },
     externals: {
         "react": "React",
-        "react/addons": "React",
-        "d3": "d3"
     }
 };
