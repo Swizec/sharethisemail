@@ -15,6 +15,12 @@ const Actions = {
             actionType: Constants.UPDATE_BODY,
             body: body
         });
+    },
+
+    copied: function () {
+        Dispatcher.dispatch({
+            actionType: Constants.COPIED
+        });
     }
 };
 

@@ -26,7 +26,8 @@ const ShareThisEmail = React.createClass({
                     <Subject value={this.state.subject} />
                     <Body value={this.state.body} />
                     <Link subject={this.state.subject}
-                          body={this.state.body} />
+                          body={this.state.body}
+                          flashCopied={this.state.flashCopied} />
                 </form>
             </div>
         )

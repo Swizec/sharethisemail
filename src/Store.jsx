@@ -7,7 +7,8 @@ const Dispatcher = require('./Dispatcher'),
 const CHANGE_EVENT = 'change';
 
 var subject = "",
-    body = "";
+    body = "",
+    flashCopied = false;
 
 const Store = Object.assign(EventEmitter.prototype, {
     getSubject: function () {
@@ -19,10 +20,14 @@ const Store = Object.assign(EventEmitter.prototype, {
     },
 
     getState: function () {
-        return {
+        var vals = {
             subject: subject,
-            body: body
+            body: body,
+            flashCopied: flashCopied
         };
+
+        flashCopied = false;
+        return vals;
     },
 
     addChangeListener: function (callback) {
@@ -49,6 +54,11 @@ Dispatcher.register(function (action) {
 
         case Constants.UPDATE_BODY:
             body = action.body;
+            Store.emitChange();
+            break;
+
+        case Constants.COPIED:
+            flashCopied = true;
             Store.emitChange();
             break;
 
